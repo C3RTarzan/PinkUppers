@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+header {
+  width: 100%;
+  height: 80px;
+  background-color: lawngreen;
+}
+header .PaiDeTudo {
+  width: 100%;
+  height: 100%;
+  background-color: lightcoral;
+  display: grid;
+  grid-template-columns: 10% 25% 30% 25%;
+}
+header .PaiDeTudo div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header .PaiDeTudo .menu {
+  background-color: khaki;
+  cursor: pointer;
+  border-radius: 10px;
+}
+header .PaiDeTudo .menu span {
+  color: mediumpurple;
+  background-image: linear-gradient(to bottom right, red, yellow);
+  padding: 20px 30px;
+  border-radius: 10px;
+}
+header .PaiDeTudo .menu:hover > nav {
+  display: grid;
+}
+header .PaiDeTudo .menu nav {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 600px;
+  height: 60px;
+  background-color: lightsteelblue;
+  display: none;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+header .PaiDeTudo .menu nav .home {
+  background-color: magenta;
+}
+header .PaiDeTudo .menu nav .loja {
+  background-color: lime;
+}
+header .PaiDeTudo .menu nav .Sobre {
+  background-color: maroon;
+}
+header .PaiDeTudo .logo {
+  background-color: lightblue;
+}
+header .PaiDeTudo .name {
+  background-color: lightgreen;
+}
+header .PaiDeTudo .img {
+  background-color: lightslategrey;
+}
+
+section div {
+  background-color: mediumseagreen;
+  width: 100%;
+  height: 100px;
+  padding: 80px 0 0 10px;
+}
+
+@media (max-width: 768px) {
+  body {
+    background-color: mediumblue;
+  }
+}
+
+/*# sourceMappingURL=teste.css.map */

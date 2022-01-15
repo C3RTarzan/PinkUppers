@@ -1,0 +1,167 @@
+section{ 
+    padding: 20px 0;
+    position: relative;
+    width: 100%;
+    min-height: calc(100% - 150px);
+    background-color: $dark3;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    .logate{
+        background-color: $dark3;
+        .login{
+            display: block;
+            width: 300px;
+            .login-title{
+                user-select: none;
+                margin-bottom: 10px;
+                display: flex;
+                justify-content: center;
+                span{
+                    font-size: 20px;
+                    font-weight: bolder;
+                    color: $corspan;
+                }
+            }
+            form{
+                .input{
+                    display: flex;
+                    flex-direction: column;
+                    input{
+                        font-size: 16px;
+                        height: 25px;
+                        margin-bottom: 8px;
+                        padding: 5px;
+                        background-color: $dark2;
+                        color: $corspan;
+                        opacity: .8;
+                        border: none;
+                    }
+                }
+                .button{
+                    display: flex;
+                    justify-content: center;
+                    padding: 0 10px;
+                    .button-register{
+                        user-select: none;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 50%;
+                        height: 40px;       
+                        span{
+                           color: $corspan;
+                           opacity: .9;
+                           cursor: pointer;
+                        }
+                    }
+                    .button-login{
+                        user-select: none;
+                        width: 50%;
+                        height: 40px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        
+                        button{
+                            cursor: pointer;
+                            border: none;
+                            border-radius: 3px;
+                            color: $white1;
+                            width: 80px;
+                            height: 25px;
+                            background-color: $corbutton;
+                            &:hover{
+                                background-color: $corbutton;
+                                opacity: .9;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .register{
+            display: none;
+            width: 300px;
+            .register-title{
+                user-select: none;
+                display: flex;
+                justify-content: center;
+                margin-bottom: 10px;
+                span{
+                    font-size: 20px;
+                    font-weight: bolder;
+                    color: $corspan;
+                }
+            }
+            form{
+                .input{
+                    display: flex;
+                    flex-direction: column;
+                    input{
+                        font-size: 16px;
+                        height: 25px;
+                        margin-bottom: 8px;
+                        padding: 5px;
+                        background-color: $dark2;
+                        color: $corspan;
+                        opacity: .8;
+                        border: none;
+                    }
+                }
+                .button{
+                    display: flex;
+                    justify-content: center;
+                    padding: 0 10px;
+                    .button-login{
+                        user-select: none;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 50%;
+                        height: 40px;       
+                        span{
+                           color: $corspan;
+                           opacity: .9;
+                           cursor: pointer;
+                        }
+                    }
+                    .button-register{
+                        user-select: none;
+                        width: 50%;
+                        height: 40px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        
+                        button{
+                            cursor: pointer;
+                            border: none;
+                            border-radius: 3px;
+                            color: $white1;
+                            width: 80px;
+                            height: 25px;
+                            background-color: $corbutton;
+                            &:hover{
+                                background-color: $corbutton;
+                                opacity: .9;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .msg{
+        color: rgb(170, 57, 57);
+        font-size: 15px;
+        margin: 10px 0;
+    }
+    input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 30px $dark2 inset;
+    }
+    input:-webkit-autofill {
+        -webkit-text-fill-color: $corspan !important;
+    }
+}

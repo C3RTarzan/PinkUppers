@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+html, body {
+  background-color: #2f3136;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  padding: 60px;
+  position: relative;
+}
+body .bc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #36393f;
+  width: 50%;
+  height: 100%;
+}
+body .bc form {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  height: 80%;
+  background-color: #2f3136;
+}
+body .bc form span {
+  font-size: 25px;
+  color: #d6d7d9;
+  font-weight: bold;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .exit {
+  position: absolute;
+  top: 85%;
+}
+body .exit a {
+  font-size: 18px;
+  color: #FF2111;
+  text-shadow: 0 0 1px black;
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=class-index.css.map */

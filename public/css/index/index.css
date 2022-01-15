@@ -1,0 +1,327 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+html, body {
+  background-color: #2f3136;
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  height: 100px;
+  background-color: #2f3136;
+  user-select: none;
+}
+header .header {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+}
+header .header .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .header .logo .img {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+header .header .logo .img:hover {
+  transform: scale(1.05);
+}
+header .header .text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .header .text .title {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .header .text .title span {
+  font-size: 30px;
+  font-weight: bolder;
+  text-shadow: 0 0 3px white;
+}
+header .header .nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .header .nav .options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 50px;
+}
+header .header .nav .options .iconify {
+  width: 40px;
+  height: 40px;
+  color: whitesmoke;
+  cursor: pointer;
+}
+header .header .nav .options .iconify:hover {
+  color: gainsboro;
+  width: 41px;
+  height: 41px;
+}
+
+section {
+  padding: 20px 0;
+  position: relative;
+  width: 100%;
+  min-height: calc(100% - 150px);
+  background-color: #292b2f;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+section .primary {
+  width: 80%;
+  height: min-content;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #36393f;
+  padding: 30px 0;
+}
+section .primary .title {
+  padding: 0 20px 20px 20px;
+  text-align: center;
+}
+section .primary .title span {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: #d6d7d9;
+  font-size: 30px;
+  font-weight: bolder;
+  text-shadow: 0 0 5px black;
+}
+section .primary .info {
+  width: 60%;
+  text-align: center;
+}
+section .primary .info span {
+  color: #d6d7d9;
+  opacity: 0.8;
+}
+section .primary .img {
+  margin-top: 40px;
+  width: 90%;
+  box-shadow: 0 0 5px white;
+}
+section .primary .img img {
+  width: 100%;
+}
+section .primary .user-account {
+  width: 80%;
+  height: 200px;
+  background-color: #292b2f;
+}
+section .secundary {
+  margin-top: 20px;
+  width: 80%;
+  height: min-content;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #36393f;
+  padding: 30px 0;
+}
+section .secundary .server {
+  width: 80%;
+  height: 80px;
+  background-color: #292b2f;
+  border-left: solid 5px #3ba55c;
+  display: grid;
+  grid-template-columns: 10% 20% 20% 30% 20%;
+}
+section .secundary .server .icon {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+section .secundary .server .icon .iconify {
+  font-size: 30px;
+  color: #3ba55c;
+}
+section .secundary .server .record {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+section .secundary .server .record .record-host span {
+  color: #d6d7d9;
+}
+section .secundary .server .record .record-state {
+  margin-top: 5px;
+  padding: 2px 5px;
+  background-color: #3ba55c;
+  width: min-content;
+  border-radius: 5px;
+}
+section .secundary .server .record .record-state span {
+  font-size: 14px;
+  color: #292b2f;
+}
+section .secundary .server .date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+section .secundary .server .date span {
+  color: #d6d7d9;
+}
+section .secundary .server .date .date-title {
+  margin-bottom: 5px;
+}
+section .secundary .server .date .date-title span {
+  opacity: 0.5;
+}
+section .secundary .server .date .date-validity span {
+  opacity: 0.9;
+}
+section .secundary .server .DNS {
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section .secundary .server .DNS span {
+  cursor: pointer;
+  padding: 10px 10px;
+  border-radius: 20px;
+  font-size: 15px;
+  border: solid 1px #3ba55c;
+  color: #d6d7d9;
+  opacity: 0.9;
+}
+section .secundary .server .DNS span:hover {
+  color: #292b2f;
+  background-color: #3ba55c;
+}
+section .secundary .server .manage {
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section .secundary .server .manage span {
+  color: #5865f2;
+  font-size: 18px;
+  cursor: pointer;
+}
+section .secundary .server .manage span:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+section .secundary .DNS-gerency {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+section .secundary .DNS-gerency .DNS-header {
+  width: 80%;
+  height: 30px;
+  background-color: #292b2f;
+  display: flex;
+  align-items: center;
+  padding-left: 5px;
+  opacity: 0.5;
+}
+section .secundary .DNS-gerency .DNS-header .iconify {
+  cursor: pointer;
+  color: #d6d7d9;
+  font-size: 30px;
+}
+section .secundary .DNS-gerency .DNS-header .iconify:hover {
+  font-size: 32px;
+}
+section .secundary .DNS-gerency .DNS-info {
+  width: 80%;
+  height: 80px;
+  background-color: #292b2f;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+section .secundary .DNS-gerency .DNS-info .DNS-ip {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section .secundary .DNS-gerency .DNS-info .DNS-ip .ip-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: brown;
+  background-color: #2f3136;
+  height: 60%;
+  width: 80%;
+}
+section .secundary .DNS-gerency .DNS-info .DNS-ip .ip-container span {
+  color: #d6d7d9;
+  opacity: 0.9;
+}
+section .secundary .DNS-gerency .DNS-info .DNS-price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section .secundary .DNS-gerency .DNS-info .DNS-price span {
+  color: #d6d7d9;
+  opacity: 0.9;
+}
+section .secundary .DNS-gerency .DNS-info .DNS-time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section .secundary .DNS-gerency .DNS-info .DNS-time span {
+  color: #d6d7d9;
+  opacity: 0.9;
+}
+section .secundary .DNS-gerency .DNS-info .DNS-edit {
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section .secundary .DNS-gerency .DNS-info .DNS-edit span {
+  cursor: pointer;
+  color: #5865f2;
+}
+section .secundary .DNS-gerency .DNS-info .DNS-edit span:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.footer {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  background-color: #2f3136;
+}
+
+/*# sourceMappingURL=index.css.map */

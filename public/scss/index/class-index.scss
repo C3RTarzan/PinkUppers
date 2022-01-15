@@ -1,0 +1,45 @@
+@import "../color";
+@import "./global.scss";
+
+body{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding: 60px;
+    position: relative;
+    .bc{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $dark1;
+        width: 50%;
+        height: 100%;
+        form{
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+            height: 80%;
+            background-color: $dark2;
+            span{
+                font-size: 25px;
+                color: $corspan;
+                font-weight: bold;
+                width: 100%;
+                height: 60px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+    .exit{
+        position: absolute;
+        top: 85%;
+        a{
+            font-size: 18px;
+            color: $corvermelho;
+            text-shadow: 0 0 1px rgb(0, 0, 0);
+            text-decoration: underline;
+        }
+    }
+}

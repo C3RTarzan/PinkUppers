@@ -1,0 +1,488 @@
+section{   
+    padding: 20px 0;
+    position: relative;
+    width: 100%;
+    min-height: calc(100% - 150px);
+    background-color: $dark3;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    .section-background{
+        width: 80%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        .header-sec{
+            position: relative;
+            background-color: $dark1;
+            margin-bottom: 20px;
+            padding: 20px 0;
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            .optins{
+                top: 0;
+                right: 0;
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                &:hover > .bc-options{
+                    height: auto;
+                }
+                .iconify{
+                    cursor: pointer;
+                    color: $corspan;
+                    font-size: 25px;
+                }
+                .bc-options{
+                    transition: 1s;
+                    overflow: hidden;
+                    display: flex;
+                    flex-direction: column;
+                    position: absolute;
+                    top: 25px;
+                    width: auto;
+                    height: 0;
+                    background-color: rgba(255, 255, 255, 0.08);
+                    border-radius: 10px;
+                    opacity: .9;
+                    user-select: none;
+                    div{
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 10px;
+                        cursor: pointer;
+                        &:hover{
+                            background-color: $dark2;
+                            opacity: .8;
+                        }
+                        .iconify{
+                            margin-right: 8px;
+                            font-size: 16px;
+                            color: $corspan;
+                        }
+                        span{
+                            font-size: 16px;
+                            color: $corspan;
+                        }
+                    }
+                }
+            }
+            .photo-background{
+                width: 80%;
+                height: 150px;
+                background-color: $dark2;
+                margin-bottom: 10px;
+                padding: 5px;
+                .photo{
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+
+                    .form-photo{
+                        width: 100px;
+                        height: 100px;
+                        border-radius: 50%;
+                        background-color: rgba(255, 255, 255, 0.08);
+                        overflow: hidden;
+                        user-select: none;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+                .name{
+                    user-select: none;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 50px;
+                    span{
+                        cursor: pointer;
+                        color: $corspan;
+                        font-size: 20px;
+                    }
+                    
+                }
+            }
+            .info-background{
+                overflow: hidden;
+                width: 80%;
+                padding: 0 15px;
+                height: 180px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                background-color: $dark2;
+                span{
+                    color: $corspan;
+                    opacity: .9;
+                }
+                .item-name{
+                    border-left: solid 5px $corbutton;
+                    border-right: solid 2.5px $corbutton;
+                    width: 50%;
+                    .name-primary{
+                        display: flex;
+                        align-items: center;
+                        background-color: $dark1;
+                        height: 25px;
+                        padding-left: 10px;
+                    }
+                    .name-secondary{
+                        display: flex;
+                        align-items: center;
+                        background-color: $dark3;
+                        height: 25px;
+                        padding-left: 10px;
+                    }
+                }
+                .item-value{
+                    border-left: solid 2.5px $corbutton;
+                    border-right: solid 5px $corbutton;
+                    width: 50%;
+                    .value-primary{
+                        display: flex;
+                        align-items: center;
+                        background-color: $dark1;
+                        height: 25px;
+                        padding-left: 10px;
+                    }
+                    .value-secondary{
+                        display: flex;
+                        align-items: center;
+                        background-color: $dark3;
+                        height: 25px;
+                        padding-left: 10px;
+                    }
+                }
+            }
+        }
+        .section-sec{
+            background-color: $dark1;
+            overflow: hidden;
+            width: 100%;
+            height: calc(100% - 60px);
+            padding-bottom: 20px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            .VPS{  //PAI
+                overflow: hidden;
+                margin: 20px 0 0 0;
+                width: 80%;
+                height: 80px;
+                background-color: $dark2;
+                display: grid;
+                grid-template-columns: 10% 20% 20% 30% 20%;
+                div{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                }
+                .icon{
+                    .iconify{
+                        font-size: 25px;
+                    }
+                    .Offline{
+                        color: $corvermelho;
+                    }
+                    .Online{
+                        color: $corverde;
+                    }
+                }
+                .info{
+                    .info-title{
+                        color: $corspan;
+                        opacity: .8;
+                    }
+                    .info-state{
+                        user-select: none;
+                        
+                        padding: 3px 8px;
+                        
+                        border-radius: 5px;
+                        margin-top: 5px;
+                    }
+                    .Offline{
+                        background-color: $corvermelho; //aki
+                        color: $corspan
+                    }
+                    .Online{
+                        background-color: $corverde; //aki
+                        color: $dark3;
+                    }
+                }
+                .date{
+                    .date-title{
+                        color: $corspan;
+                        opacity: .7;
+                    }
+                    .date-info{
+                        color: $corspan;
+                        opacity: .9;
+                    }
+                }
+                .IP{
+                    span{                        
+                        border-radius: 20px;
+                        padding: 10px 15px;                       
+                        user-select: none;                       
+                        transition: .2s;       
+                    }
+                }
+                .Offline-ip{
+                    span{
+                        border: solid 1px $corvermelho;
+                        color: $corspan;
+                    }
+                }
+                .Online-ip{
+                    span{
+                        border: solid 1px $corverde;
+                        color: $corspan;
+                        cursor: pointer;
+                        &:hover{
+                            color: $dark1;
+                            background-color: $corverde;
+                        }
+                    }
+                }  
+                .gerency{
+                    span{
+                        cursor: pointer;
+                        user-select: none;
+                        color: $corbutton;
+                        &:hover{
+                            opacity: .8;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+                
+            }
+            .Offline-vps{
+                border-left: solid 4px $corvermelho; //aki
+            }
+            .Online-vps{
+                border-left: solid 4px $corverde; //aki
+            }
+            .IP-gerency{ //FILHP
+                transition: .5s;
+                overflow: hidden;
+                width: 80%;
+                height: 0;
+                background-color: $dark3;
+                border-radius: 0 0 5px 5px;
+                display: grid;
+                grid-template-columns: 25% 25% 25% 25%;
+                div{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                }
+                .ip-number{
+                    span{
+                        color: $corspan;
+                        opacity: .8;
+                    }
+                }
+                .ip-price{
+                    color: $corverde;
+                    opacity: .8;
+                }
+                .ip-time{
+                     color: $corspan;
+                     opacity: .8;
+                }
+                .ip-trocarte{
+                    color: $corbutton;
+                    cursor: pointer;
+                    user-select: none;
+                    &:hover{
+                        opacity: .8;
+                        text-decoration: underline;
+                    }
+                }
+            }
+            
+        }
+        .section2-sec{
+            background-color: $dark1;
+            overflow: hidden;
+            width: 100%;
+            height: calc(100% - 60px);
+            margin-top: 20px;
+            padding: 20px 100px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 20px;
+            .bank{
+                width: 100%;
+                height: 200px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                .bank-name{
+                    height: 50px;
+                    width: 100%;
+                    border-radius: 10px 10px 0 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: row;
+                    background-color: $dark2;
+                    .icon-bank{
+                        user-select: none;
+                        width: 20%;
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .img{
+                            width: 30px;
+                            height: 30px;
+                            img{
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+                    }
+                    .info-bank{
+                        width: 60%;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: flex-start;
+                        span{
+                            font-size: 12px;
+                            color: $corspan;
+                            opacity: .8;
+                        }
+                    }
+                    .option-bank{
+                        user-select: none;
+                        width: 20%;
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: row;
+                        .pencil-option{
+                            width: 50%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            .iconify{
+                                cursor: pointer;
+                                color: $corbutton;
+                            }
+                        }
+                        .exit-option{
+                            width: 50%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            .iconify{
+                                cursor: pointer;
+                                color: $corbutton;
+                            }
+                        }
+                    }
+                }
+                .bank-dice{
+                    height: 100px;
+                    width: 100%;
+                    background-color: $dark3;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    .title-dice{
+                        span{
+                            font-size: 17px;
+                            color: $corspan;
+                        }
+                    }
+                    .value-dice{
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        flex-direction: row;
+                        margin: 5px 0;
+                        .coin-value{
+                            margin-right: 5px;
+                            height: 100%;
+                            display: flex;
+                            align-items: flex-end;
+                            span{
+                                color: $corspan;
+                                opacity: .8;
+                                font-size: 12px;
+                                padding-bottom: 5px;
+                            }
+                        }
+                        .balance-value{
+                            height: 100%;
+                            display: flex;
+                            align-items: flex-end;
+                            span{
+                                display: flex;
+                                align-items: flex-end;
+                                color: $corspan;
+                                font-size: 25px;
+                            }
+                        }
+                    }
+                    .date-dice{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        text-align: center;
+                        span{
+                            font-size: 12px;
+                            color: $corspan;
+                            opacity: .4;
+                        }
+                    }
+                }
+                .bank-button{
+                    user-select: none;
+                    height: 50px;
+                    width: 100%;
+                    border-radius: 0 0 10px 10px;
+                    background-color: $dark3;
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-end;
+                    button{
+                        cursor: pointer;
+                        border: none;
+                        color: $corbutton;
+                        font-weight: bolder;
+                        height: 80%;
+                        width: 60%;
+                        font-size: 18px;
+                        background-color: $dark3;
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

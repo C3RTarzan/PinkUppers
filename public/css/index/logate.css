@@ -1,0 +1,254 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+html, body {
+  background-color: #2f3136;
+  width: 100%;
+  height: 100%;
+}
+
+section {
+  padding: 20px 0;
+  position: relative;
+  width: 100%;
+  min-height: calc(100% - 150px);
+  background-color: #292b2f;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+section .logate {
+  background-color: #292b2f;
+}
+section .logate .login {
+  display: block;
+  width: 300px;
+}
+section .logate .login .login-title {
+  user-select: none;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+section .logate .login .login-title span {
+  font-size: 20px;
+  font-weight: bolder;
+  color: #d6d7d9;
+}
+section .logate .login form .input {
+  display: flex;
+  flex-direction: column;
+}
+section .logate .login form .input input {
+  font-size: 16px;
+  height: 25px;
+  margin-bottom: 8px;
+  padding: 5px;
+  background-color: #2f3136;
+  color: #d6d7d9;
+  opacity: 0.8;
+  border: none;
+}
+section .logate .login form .button {
+  display: flex;
+  justify-content: center;
+  padding: 0 10px;
+}
+section .logate .login form .button .button-register {
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 40px;
+}
+section .logate .login form .button .button-register span {
+  color: #d6d7d9;
+  opacity: 0.9;
+  cursor: pointer;
+}
+section .logate .login form .button .button-login {
+  user-select: none;
+  width: 50%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section .logate .login form .button .button-login button {
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+  color: #DEE7FD;
+  width: 80px;
+  height: 25px;
+  background-color: #5865f2;
+}
+section .logate .login form .button .button-login button:hover {
+  background-color: #5865f2;
+  opacity: 0.9;
+}
+section .logate .register {
+  display: none;
+  width: 300px;
+}
+section .logate .register .register-title {
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+section .logate .register .register-title span {
+  font-size: 20px;
+  font-weight: bolder;
+  color: #d6d7d9;
+}
+section .logate .register form .input {
+  display: flex;
+  flex-direction: column;
+}
+section .logate .register form .input input {
+  font-size: 16px;
+  height: 25px;
+  margin-bottom: 8px;
+  padding: 5px;
+  background-color: #2f3136;
+  color: #d6d7d9;
+  opacity: 0.8;
+  border: none;
+}
+section .logate .register form .button {
+  display: flex;
+  justify-content: center;
+  padding: 0 10px;
+}
+section .logate .register form .button .button-login {
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 40px;
+}
+section .logate .register form .button .button-login span {
+  color: #d6d7d9;
+  opacity: 0.9;
+  cursor: pointer;
+}
+section .logate .register form .button .button-register {
+  user-select: none;
+  width: 50%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section .logate .register form .button .button-register button {
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+  color: #DEE7FD;
+  width: 80px;
+  height: 25px;
+  background-color: #5865f2;
+}
+section .logate .register form .button .button-register button:hover {
+  background-color: #5865f2;
+  opacity: 0.9;
+}
+section .msg {
+  color: #aa3939;
+  font-size: 15px;
+  margin: 10px 0;
+}
+section input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px #2f3136 inset;
+}
+section input:-webkit-autofill {
+  -webkit-text-fill-color: #d6d7d9 !important;
+}
+
+header {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  height: 100px;
+  background-color: #2f3136;
+  user-select: none;
+}
+header .header {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+}
+header .header .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .header .logo .img {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+header .header .logo .img:hover {
+  transform: scale(1.05);
+}
+header .header .text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .header .text .title {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .header .text .title span {
+  font-size: 30px;
+  font-weight: bolder;
+  text-shadow: 0 0 3px white;
+}
+header .header .nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .header .nav .options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 50px;
+}
+header .header .nav .options .iconify {
+  width: 40px;
+  height: 40px;
+  color: whitesmoke;
+  cursor: pointer;
+}
+header .header .nav .options .iconify:hover {
+  color: gainsboro;
+  width: 41px;
+  height: 41px;
+}
+
+.footer {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  background-color: #2f3136;
+}
+
+/*# sourceMappingURL=logate.css.map */
