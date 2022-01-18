@@ -5,6 +5,7 @@
     $id = $_SESSION['id'];
     $user = $_SESSION['user'];
     include("../class/account_vps_off.php");
+    include("../class/status_update.php");
 ?>
 
 <!DOCTYPE html>
@@ -56,7 +57,7 @@
                         $dado = mysqli_fetch_array($result); 
                         $reputation = $dado["reputation"];
                         $time = $dado["time"];
-                        $money = $dado["money"];
+                        $money = str_replace('.', ',',sprintf('%.2f', $dado["money"]));
                         $ddos = $dado["ddos"];
                         $bitcoin = $dado["bitcoin"];
                         $server = $dado["server"];
@@ -93,7 +94,7 @@
                             <span><?php echo $time ?></span>
                         </div>
                         <div class="value-primary">
-                            <span>R$ <?php echo $money ?></span>
+                            <span>R$ <?php echo $money?></span>
                         </div>
                         <div class="value-secondary">
                             <span><?php echo $ddos ?> GB</span>
@@ -139,7 +140,15 @@
                         </div>
                         <div class="date">
                             <div class="date-title">
+
+                            <?php if ( $status == 'Online'): ?>
                                 <span>Vencimento</span>
+                            <?php endif ?>
+
+                            <?php if ( $status != 'Online'): ?>
+                                <span>Vencido</span>
+                            <?php endif ?>
+                                
                             </div>
                             <div class="date-info">
                                 <span>
@@ -154,12 +163,25 @@
                             </div>
                         </div>
                         <div class="IP <?php echo $status ?>-ip">
+                            <?php if ( $status == 'Online'): ?>
                             <span>Alterar IP</span>
+                            <?php endif ?>
+                            <?php if ( $status != 'Online'): ?>
+                            <span>Renovar</span>
+                            <?php endif ?>
                         </div>
                         <div class="gerency">
+                            <?php if ($status != 'Offline'): ?>
+                            <form action="./Desktop/index.php" method="post">
+                                <button name="log-in" value="<?php echo $ip ?>">ENTRAR</button>
+                            </form>
+                            <?php endif ?>
+                            <?php if ($status == 'Offline'): ?>
                             <span>ENTRAR</span>
+                            <?php endif ?>
                         </div>
                     </div>
+                    
                     <?php
                         if($status == 'Online'):
                     ?>
@@ -178,6 +200,27 @@
                         </div>
                     </div>
                     <?php endif; ?>
+                        <?php
+                            if($status != 'Online'):
+                        ?>
+                    <div class="renew IP-gerency">
+                        <div class="renew-price">
+                            <span>500$</span>
+                        </div>
+                        <div class="renew-renovation">
+                            <span class="renovation">Renovação</span>
+                            <span>10/11/2020</span>
+                        </div>
+                        <div class="renew-time">
+                            <span>30 Dias</span>
+                        </div>
+                        <div class="renew-renew">
+                            <form action="./renovate.php" method="post">
+                                <button name="renovate" value="<?php echo $ip?>">Renovar</button>
+                            </form>
+                        </div>
+                    </div>
+                    <?php endif; ?>
                 <?php
                 endfor;
                 ?>
@@ -191,7 +234,7 @@
                     $dado = mysqli_fetch_array($result); 
                     $account = $dado['account'];
                     $agency = $dado['agency'];
-                    $balance = $dado['balance'];
+                    $balance = str_replace('.', ',', sprintf('%.2f', $dado['balance']));
                     $date = strtotime($dado['date']);
                 ?>           
                 <div class="bank">
@@ -239,7 +282,6 @@
             </div>
         </div>
     </section>
-
     <?php
     include "../view/footer.php";
     ?>

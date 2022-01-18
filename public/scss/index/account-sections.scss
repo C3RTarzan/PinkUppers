@@ -184,6 +184,7 @@ section{
                 background-color: $dark2;
                 display: grid;
                 grid-template-columns: 10% 20% 20% 30% 20%;
+                position: relative;
                 div{
                     display: flex;
                     justify-content: center;
@@ -245,6 +246,11 @@ section{
                     span{
                         border: solid 1px $corvermelho;
                         color: $corspan;
+                        cursor: pointer;
+                        &:hover{
+                            color: $corspan;
+                            background-color: $corvermelho;
+                        }
                     }
                 }
                 .Online-ip{
@@ -259,7 +265,10 @@ section{
                     }
                 }  
                 .gerency{
-                    span{
+                    button{
+                        background-color: rgba(255, 255, 255, 0);
+                        border: none;
+                        font-size: 16px;
                         cursor: pointer;
                         user-select: none;
                         color: $corbutton;
@@ -268,8 +277,64 @@ section{
                             text-decoration: underline;
                         }
                     }
+                    span{
+                        cursor: default;
+                        user-select: none;
+                        color: $corbutton;
+                        opacity: .7;
+                    }
                 }
                 
+            }
+            .renew{
+                transition: .5s;
+                overflow: hidden;
+                width: 80%;
+                height: 60px;
+                background-color: $dark3;
+                border-radius: 0 0 5px 5px;
+                display: grid;
+                grid-template-columns: 25% 25% 25% 25%;
+                div{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                }
+                .renew-price{
+                    color: $corverde;
+                    opacity: .8;
+                }
+                .renew-renovation{
+                    display: flex;
+                    flex-direction: column;
+                    span{
+                        color: $corspan;
+                        opacity: .8;
+                    }
+                    .renovation{
+                        font-size: 16px;
+                        opacity: .6;
+                    }
+                }
+                .renew-time{
+                     color: $corspan;
+                     opacity: .8;
+                }
+                .renew-renew{
+                    button{
+                        background-color: transparent;
+                        border: none;
+                        font-size: 16px;
+                        color: $corbutton;
+                        cursor: pointer;
+                        user-select: none;
+                        &:hover{
+                            opacity: .8;
+                            text-decoration: underline;
+                        }
+                    }
+                }
             }
             .Offline-vps{
                 border-left: solid 4px $corvermelho; //aki

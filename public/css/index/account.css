@@ -276,6 +276,7 @@ section .section-background .section-sec .VPS {
   background-color: #2f3136;
   display: grid;
   grid-template-columns: 10% 20% 20% 30% 20%;
+  position: relative;
 }
 section .section-background .section-sec .VPS div {
   display: flex;
@@ -327,6 +328,11 @@ section .section-background .section-sec .VPS .IP span {
 section .section-background .section-sec .VPS .Offline-ip span {
   border: solid 1px #FF2111;
   color: #d6d7d9;
+  cursor: pointer;
+}
+section .section-background .section-sec .VPS .Offline-ip span:hover {
+  color: #d6d7d9;
+  background-color: #FF2111;
 }
 section .section-background .section-sec .VPS .Online-ip span {
   border: solid 1px #3ba55c;
@@ -337,12 +343,69 @@ section .section-background .section-sec .VPS .Online-ip span:hover {
   color: #36393f;
   background-color: #3ba55c;
 }
-section .section-background .section-sec .VPS .gerency span {
+section .section-background .section-sec .VPS .gerency button {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  font-size: 16px;
   cursor: pointer;
   user-select: none;
   color: #5865f2;
 }
-section .section-background .section-sec .VPS .gerency span:hover {
+section .section-background .section-sec .VPS .gerency button:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+section .section-background .section-sec .VPS .gerency span {
+  cursor: default;
+  user-select: none;
+  color: #5865f2;
+  opacity: 0.7;
+}
+section .section-background .section-sec .renew {
+  transition: 0.5s;
+  overflow: hidden;
+  width: 80%;
+  height: 60px;
+  background-color: #292b2f;
+  border-radius: 0 0 5px 5px;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+section .section-background .section-sec .renew div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+section .section-background .section-sec .renew .renew-price {
+  color: #3ba55c;
+  opacity: 0.8;
+}
+section .section-background .section-sec .renew .renew-renovation {
+  display: flex;
+  flex-direction: column;
+}
+section .section-background .section-sec .renew .renew-renovation span {
+  color: #d6d7d9;
+  opacity: 0.8;
+}
+section .section-background .section-sec .renew .renew-renovation .renovation {
+  font-size: 16px;
+  opacity: 0.6;
+}
+section .section-background .section-sec .renew .renew-time {
+  color: #d6d7d9;
+  opacity: 0.8;
+}
+section .section-background .section-sec .renew .renew-renew button {
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  color: #5865f2;
+  cursor: pointer;
+  user-select: none;
+}
+section .section-background .section-sec .renew .renew-renew button:hover {
   opacity: 0.8;
   text-decoration: underline;
 }

@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+html, body {
+  background-color: #2f3136;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+body .ip {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .ip span {
+  font-size: 20px;
+  color: #FF2111;
+}
+body .absolute-trocarte {
+  width: 300px;
+  height: 300px;
+  background-color: #36393f;
+  box-shadow: 0 0 1.3px white;
+  border-radius: 20px;
+}
+body .absolute-trocarte form {
+  width: 100%;
+  height: 100%;
+}
+body .absolute-trocarte form .bank {
+  height: 70%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+body .absolute-trocarte form .bank .bank-text {
+  width: 100%;
+  height: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+body .absolute-trocarte form .bank .bank-text div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .absolute-trocarte form .bank .bank-text .title {
+  height: 45%;
+  width: 100%;
+  font-size: 20px;
+  color: #d6d7d9;
+}
+body .absolute-trocarte form .bank .bank-text .price {
+  width: 100%;
+  height: 55%;
+  display: flex;
+  flex-direction: column;
+}
+body .absolute-trocarte form .bank .bank-text .price span {
+  font-size: 20px;
+  color: #d6d7d9;
+}
+body .absolute-trocarte form .bank .bank-text .price .price-text {
+  font-size: 18px;
+}
+body .absolute-trocarte form .bank .bank-text .price .price-value {
+  color: #3ba55c;
+  font-size: 16px;
+}
+body .absolute-trocarte form .bank .select {
+  width: 100%;
+  height: 55%;
+  display: flex;
+  justify-content: center;
+}
+body .absolute-trocarte form .bank .select select {
+  cursor: pointer;
+  margin-top: 20px;
+  width: 90%;
+  height: 30px;
+  background-color: #2f3136;
+  color: #d6d7d9;
+  border-radius: 5px;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-align: center;
+}
+body .absolute-trocarte form .button {
+  height: 30%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .absolute-trocarte form .button button {
+  border: none;
+  width: 80%;
+  height: 60%;
+  cursor: pointer;
+  background-color: #292b2f;
+  border-radius: 8px;
+  color: #3ba55c;
+  font-size: 18px;
+}
+body .absolute-trocarte form .button button:hover {
+  opacity: 0.8;
+}
+
+/*# sourceMappingURL=account-renovate.css.map */

@@ -1,7 +1,8 @@
 <?php
     session_start();
     include("../../class/verificationLogin.php");
-    include("../../class/conexao.php")
+    include("../../class/conexao.php");
+    include("../../class/vps_login.php")
 ?>
 
 <!DOCTYPE html>
