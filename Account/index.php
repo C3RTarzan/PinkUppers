@@ -6,6 +6,7 @@
     $user = $_SESSION['user'];
     include("../class/account_vps_off.php");
     include("../class/status_update.php");
+    date_default_timezone_set('America/Sao_Paulo');
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +23,17 @@
 </head>
 
 <body>
+    <?php if(isset($_SESSION["balance_vps"])): ?>
+        <div class="exeption_vps">
+            <div class="close">
+                <span class="iconify" data-icon="ep:circle-close-filled"></span>
+            </div>
+            <span class="msg">Saldo Insuficiente!!</span>
+        </div>
+    <?php
+        endif;
+        unset($_SESSION['balance_vps']); 
+    ?>
     <section>
         <div class="section-background">
             <div class="header-sec">
@@ -209,7 +221,7 @@
                         </div>
                         <div class="renew-renovation">
                             <span class="renovation">Renovação</span>
-                            <span>10/11/2020</span>
+                            <span><?php echo date('d/m/Y', strtotime(date('Y-m-d')) + 2592000);?></span>
                         </div>
                         <div class="renew-time">
                             <span>30 Dias</span>

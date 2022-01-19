@@ -1,5 +1,7 @@
 ipGerency();
 options();
+closeExceptionVps()
+
 function ipGerency() {
     const ipTrocarte = document.querySelectorAll(".IP span");
     const ipGerency = document.querySelectorAll(".IP-gerency");
@@ -17,9 +19,20 @@ function ipGerency() {
         })
     }
 }
+
 function options() {
-    let exit = document.querySelector(".bc-options .Sair");
+    const exit = document.querySelector(".bc-options .Sair");
     exit.addEventListener("click", () => {
         window.location.href = "/class/logout.php";
     })
 }
+
+function closeExceptionVps(){
+    const click = document.querySelector(".exeption_vps .close");
+    const affected = document.querySelector(".exeption_vps");
+
+    click.addEventListener("click", () =>{
+        affected.style.display = "none";
+    })
+}
+

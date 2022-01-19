@@ -617,4 +617,37 @@ section .section-background .section2-sec .bank .bank-button button:hover {
   text-decoration: underline;
 }
 
+body .exeption_vps {
+  z-index: 1;
+  position: fixed;
+  left: calc(50% - 125px);
+  top: calc(50% - 50px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 100px;
+  background-color: #FF2111;
+  box-shadow: 0 0 5px black;
+  border-radius: 10px;
+}
+body .exeption_vps .close {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  font-size: 18px;
+  color: #070707;
+  cursor: pointer;
+}
+body .exeption_vps .close:hover {
+  transform: scale(1.1);
+}
+body .exeption_vps span {
+  text-shadow: 0 0 2px black;
+  color: #d6d7d9;
+  font-size: 20px;
+  font-weight: bold;
+  user-select: none;
+}
+
 /*# sourceMappingURL=account.css.map */

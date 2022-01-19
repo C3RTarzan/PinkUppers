@@ -46,7 +46,7 @@
                 </div>
             </div>
             <div class="button">
-                <button name='renew' value='<?php $ip ?>'>Renovar</button>
+                <button name='renew' value='<?php echo $_POST['renovate'] ?>'>Renovar</button>
             </div>
         </form>
     </div>
