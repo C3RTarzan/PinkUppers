@@ -138,7 +138,7 @@ function backOptions(){
 
                 input2.setAttribute("type", "text");
                 input2.setAttribute("name", "choice");
-                input2.setAttribute("value", "pencil")
+                input2.setAttribute("value", "pencil");
                 form.appendChild(input2);
 
                 document.body.appendChild(form);
