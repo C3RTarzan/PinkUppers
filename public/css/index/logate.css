@@ -12,6 +12,17 @@ html, body {
   height: 100%;
 }
 
+::-webkit-scrollbar {
+  width: 6px;
+  background: #292b2f;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #36393f;
+  border-radius: 3px;
+}
+
 section {
   padding: 20px 0;
   position: relative;

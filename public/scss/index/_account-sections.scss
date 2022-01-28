@@ -1,4 +1,6 @@
 section{   
+    position: relative;
+    z-index: 1;
     padding: 20px 0;
     position: relative;
     width: 100%;
@@ -201,6 +203,9 @@ section{
                     .Online{
                         color: $corverde;
                     }
+                    .Unavailable{
+                        color: $coramarelo;
+                    }
                 }
                 .info{
                     .info-title{
@@ -221,6 +226,10 @@ section{
                     }
                     .Online{
                         background-color: $corverde; //aki
+                        color: $dark3;
+                    }
+                    .Unavailable{
+                        background-color: $coramarelo;
                         color: $dark3;
                     }
                 }
@@ -263,7 +272,18 @@ section{
                             background-color: $corverde;
                         }
                     }
-                }  
+                } 
+                .Unavailable-ip{
+                    span{
+                        border: solid 1px $coramarelo;
+                        color: $corspan;
+                        cursor: pointer;
+                        &:hover{
+                            color: $dark1;
+                            background-color: $coramarelo;
+                        }
+                    }
+                } 
                 .gerency{
                     button{
                         background-color: rgba(255, 255, 255, 0);
@@ -368,16 +388,22 @@ section{
                     opacity: .8;
                 }
                 .ip-time{
-                     color: $corspan;
-                     opacity: .8;
+                    user-select: none;
+                    color: $corspan;
+                    opacity: .8;
                 }
                 .ip-trocarte{
-                    color: $corbutton;
-                    cursor: pointer;
-                    user-select: none;
-                    &:hover{
-                        opacity: .8;
-                        text-decoration: underline;
+                    button{
+                        border: none;
+                        background-color: transparent;
+                        color: $corbutton;
+                        cursor: pointer;
+                        user-select: none;
+                        font-size: 16px;
+                        &:hover{
+                            opacity: .8;
+                            text-decoration: underline;
+                        }
                     }
                 }
             }
@@ -436,6 +462,11 @@ section{
                             font-size: 12px;
                             color: $corspan;
                             opacity: .8;
+                            span{
+                                font-size: 12px;
+                                color: $corspan;
+                                opacity: 1;
+                            }
                         }
                     }
                     .option-bank{

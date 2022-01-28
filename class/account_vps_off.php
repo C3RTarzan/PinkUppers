@@ -15,7 +15,9 @@ for($i = 0; $i < $row; $i++){
 
     //$newDate = date("m-d-Y", $timestamp );
 
-    if($date == '----'){
+    if($status == 'Unavailable'){
+
+    }elseif($date == '----'){
         $query_update = "UPDATE vps SET status = 'Online' WHERE id = '$id_update'";
         $result_update = mysqli_query($conexao, $query_update);
     }elseif($date_vps_strtotime >= $date_today_strtotime){

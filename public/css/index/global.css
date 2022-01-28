@@ -12,4 +12,15 @@ html, body {
   height: 100%;
 }
 
+::-webkit-scrollbar {
+  width: 6px;
+  background: #292b2f;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #36393f;
+  border-radius: 3px;
+}
+
 /*# sourceMappingURL=global.css.map */

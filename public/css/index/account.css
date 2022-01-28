@@ -12,6 +12,17 @@ html, body {
   height: 100%;
 }
 
+::-webkit-scrollbar {
+  width: 6px;
+  background: #292b2f;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #36393f;
+  border-radius: 3px;
+}
+
 header {
   position: relative;
   z-index: 5;
@@ -90,6 +101,8 @@ header .header .nav .options .iconify:hover {
 }
 
 section {
+  position: relative;
+  z-index: 1;
   padding: 20px 0;
   position: relative;
   width: 100%;
@@ -293,6 +306,9 @@ section .section-background .section-sec .VPS .icon .Offline {
 section .section-background .section-sec .VPS .icon .Online {
   color: #3ba55c;
 }
+section .section-background .section-sec .VPS .icon .Unavailable {
+  color: #FBCE3B;
+}
 section .section-background .section-sec .VPS .info .info-title {
   color: #d6d7d9;
   opacity: 0.8;
@@ -309,6 +325,10 @@ section .section-background .section-sec .VPS .info .Offline {
 }
 section .section-background .section-sec .VPS .info .Online {
   background-color: #3ba55c;
+  color: #292b2f;
+}
+section .section-background .section-sec .VPS .info .Unavailable {
+  background-color: #FBCE3B;
   color: #292b2f;
 }
 section .section-background .section-sec .VPS .date .date-title {
@@ -342,6 +362,15 @@ section .section-background .section-sec .VPS .Online-ip span {
 section .section-background .section-sec .VPS .Online-ip span:hover {
   color: #36393f;
   background-color: #3ba55c;
+}
+section .section-background .section-sec .VPS .Unavailable-ip span {
+  border: solid 1px #FBCE3B;
+  color: #d6d7d9;
+  cursor: pointer;
+}
+section .section-background .section-sec .VPS .Unavailable-ip span:hover {
+  color: #36393f;
+  background-color: #FBCE3B;
 }
 section .section-background .section-sec .VPS .gerency button {
   background-color: rgba(255, 255, 255, 0);
@@ -440,15 +469,19 @@ section .section-background .section-sec .IP-gerency .ip-price {
   opacity: 0.8;
 }
 section .section-background .section-sec .IP-gerency .ip-time {
+  user-select: none;
   color: #d6d7d9;
   opacity: 0.8;
 }
-section .section-background .section-sec .IP-gerency .ip-trocarte {
+section .section-background .section-sec .IP-gerency .ip-trocarte button {
+  border: none;
+  background-color: transparent;
   color: #5865f2;
   cursor: pointer;
   user-select: none;
+  font-size: 16px;
 }
-section .section-background .section-sec .IP-gerency .ip-trocarte:hover {
+section .section-background .section-sec .IP-gerency .ip-trocarte button:hover {
   opacity: 0.8;
   text-decoration: underline;
 }
@@ -509,6 +542,11 @@ section .section-background .section2-sec .bank .bank-name .info-bank span {
   font-size: 12px;
   color: #d6d7d9;
   opacity: 0.8;
+}
+section .section-background .section2-sec .bank .bank-name .info-bank span span {
+  font-size: 12px;
+  color: #d6d7d9;
+  opacity: 1;
 }
 section .section-background .section2-sec .bank .bank-name .option-bank {
   user-select: none;
@@ -617,8 +655,129 @@ section .section-background .section2-sec .bank .bank-button button:hover {
   text-decoration: underline;
 }
 
-body .exeption_vps {
-  z-index: 1;
+body {
+  position: relative;
+}
+body .time-vps-wait {
+  transition: 1s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  z-index: 2;
+  width: 0;
+  max-height: calc(100% - 25px);
+  overflow-y: auto;
+  top: 25px;
+  padding: 5px 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 0 5px 5px 0;
+  opacity: 0.9;
+}
+body .time-vps-wait .none {
+  display: none;
+}
+body .time-vps-wait .wait-iten {
+  width: 90%;
+  height: 50px;
+  border-radius: 5px;
+  background-color: #2f3136;
+  padding: 2px 5px;
+  margin: 5px 0;
+  display: flex;
+  box-shadow: 0 0 1px #d6d7d9;
+  align-items: center;
+}
+body .time-vps-wait .wait-iten .iten-inffo-number {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 20%;
+  height: 100%;
+}
+body .time-vps-wait .wait-iten .iten-inffo-number div {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+body .time-vps-wait .wait-iten .iten-inffo-number div span {
+  font-size: 14px;
+}
+body .time-vps-wait .wait-iten .iten-inffo-number .number-time span {
+  color: #d6d7d9;
+}
+body .time-vps-wait .wait-iten .iten-inffo-number .number-percentage span {
+  color: #d6d7d9;
+  opacity: 0.8;
+}
+body .time-vps-wait .wait-iten .iten-percentage-bar {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+body .time-vps-wait .wait-iten .iten-percentage-bar .bar-inffo {
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .time-vps-wait .wait-iten .iten-percentage-bar .bar-inffo span {
+  color: #FBCE3B;
+  font-size: 15px;
+}
+body .time-vps-wait .wait-iten .iten-percentage-bar .bar-bc {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .time-vps-wait .wait-iten .iten-percentage-bar .bar-bc .bar {
+  height: 10px;
+  width: 90%;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: #292b2f;
+  box-shadow: 0 0 1.5px white;
+}
+body .time-vps-wait .wait-iten .iten-percentage-bar .bar-bc .bar .bar-inside {
+  height: 100%;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, red, yellow);
+}
+body .wait-arrow {
+  transition: 1s;
+  user-select: none;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 25px;
+  left: 0;
+  width: auto;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  transform: rotateY(0deg);
+  cursor: pointer;
+  animation: anima 1.5s ease infinite;
+}
+@keyframes anima {
+  to {
+    opacity: 0;
+  }
+}
+body .wait-arrow .iconify {
+  color: #FBCE3B;
+}
+
+body .exeption, body .warning {
+  z-index: 3;
   position: fixed;
   left: calc(50% - 125px);
   top: calc(50% - 50px);
@@ -631,7 +790,7 @@ body .exeption_vps {
   box-shadow: 0 0 5px black;
   border-radius: 10px;
 }
-body .exeption_vps .close {
+body .exeption .close, body .warning .close {
   position: absolute;
   right: 5px;
   top: 5px;
@@ -639,15 +798,56 @@ body .exeption_vps .close {
   color: #070707;
   cursor: pointer;
 }
-body .exeption_vps .close:hover {
+body .exeption .close:hover, body .warning .close:hover {
   transform: scale(1.1);
 }
-body .exeption_vps span {
+body .exeption span, body .warning span {
   text-shadow: 0 0 2px black;
   color: #d6d7d9;
   font-size: 20px;
   font-weight: bold;
   user-select: none;
+}
+body .warning {
+  display: none;
+  flex-direction: column;
+  top: calc(50% - 100px);
+  left: calc(50% - 150px);
+  height: 200px;
+  width: 300px;
+  padding: 10px;
+}
+body .warning .msg {
+  height: 80%;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .warning .button {
+  height: 20%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .warning .button span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 120px;
+  height: 30px;
+  border-radius: 5px;
+}
+body .warning .button span:hover {
+  transform: scale(1.05);
+}
+body .warning .button span:active {
+  background-color: rgba(0, 0, 0, 0.4);
+  transform: scale(1);
 }
 
 /*# sourceMappingURL=account.css.map */

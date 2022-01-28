@@ -1,16 +1,17 @@
 <?php
     session_start();
+    date_default_timezone_set('America/Sao_Paulo');
     include("../class/verificationLogin.php");
     include("../class/conexao.php");
     $id = $_SESSION['id'];
     $user = $_SESSION['user'];
+    include("../class/ip_update.php");
     include("../class/account_vps_off.php");
     include("../class/status_update.php");
-    date_default_timezone_set('America/Sao_Paulo');
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -23,8 +24,19 @@
 </head>
 
 <body>
+    <div class="warning exeption">
+        <div class="close">
+            <span class="iconify" data-icon="ep:circle-close-filled"></span>
+        </div>
+        <div class="msg">
+            <span></span>
+        </div>
+        <div class="button">
+            <span>ACEITAR</span>
+        </div>
+    </div>
     <?php if(isset($_SESSION["balance_vps"])): ?>
-        <div class="exeption_vps">
+        <div class="exeption">
             <div class="close">
                 <span class="iconify" data-icon="ep:circle-close-filled"></span>
             </div>
@@ -34,6 +46,73 @@
         endif;
         unset($_SESSION['balance_vps']); 
     ?>
+    <?php
+    $query = "select * from vps where user_id = '$id' and status = 'Unavailable'";
+    $result = mysqli_query($conexao, $query);
+    $row = mysqli_num_rows($result);
+    if($row > 0):
+
+    ?>
+    <div class="time-vps-wait">
+        <?php 
+        for($i = 0; $i < $row; $i++):
+            $dado = mysqli_fetch_array($result); 
+            $ipUpdate = $dado['ipUpdate'];
+            $ipUpdateStart = $dado['ipUpdateStart'];
+            $ip = $dado['ip'];
+            $date = strtotime(date('Y-m-d H:i:s'));
+
+            $contPorc = ($ipUpdate - $date);
+    
+            $porc =  round(($ipUpdateStart - $date) * 100 / ($ipUpdateStart - $ipUpdate));
+            
+            
+            $str = $ipUpdate - $ipUpdateStart;
+            
+                if($str < 60){
+
+                    $count =  date('s', $contPorc);
+
+                }elseif($str < 3600){
+
+                    $count =  date('i:s', $contPorc);
+
+                }else{
+
+                    $count =  date('H:i:s', $contPorc);
+
+                }
+         ?>
+        <input id="value-start" class="none" value="<?php echo $ipUpdateStart ?>">
+        <input id="value-end" class="none" value="<?php echo $ipUpdate ?>">
+        <div class="wait-iten"> 
+            <div class="iten-inffo-number">
+                <div class="number-time update_VPS">
+                    <span></span> 
+                </div>
+                <div class="number-percentage update_VPS">
+                    <span></span>   
+                </div>
+            </div>
+            <div class="iten-percentage-bar">
+                <div class="bar-inffo">
+                    <span><?php echo $ip ?></span>
+                </div>
+                <div class="bar-bc update_VPS"> 
+                    <div class="bar">
+                        <div class="bar-inside">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php endfor; ?>
+    </div>
+    <div class="wait-arrow">
+        <span class="iconify" data-icon="bx:bxs-right-arrow"></span>
+    </div>
+    <?php endif ?>
     <section>
         <div class="section-background">
             <div class="header-sec">
@@ -134,9 +213,30 @@
                 for($i = 0; $i < $row; $i++):
                     $dado = mysqli_fetch_array($result); 
                     $date = $dado['date'];
-                    $datestr = strtotime($dado['date']);
                     $ip = $dado['ip'];
                     $status = $dado['status'];
+                    $datestr = strtotime($dado['date']);
+                    if($status == 'Unavailable'){
+                        $ipUpdate = $dado['ipUpdate'];
+                        $ipUpdateStart = $dado['ipUpdateStart'];
+                        $str = $ipUpdate - $ipUpdateStart;
+                        $dateNow = strtotime(date('Y-m-d H:i:s'));
+                        $contPorc = ($ipUpdate - $dateNow);
+                        if($str < 60){
+    
+                            $count =  date('s', $contPorc);
+        
+                        }elseif($str < 3600){
+        
+                            $count =  date('i:s', $contPorc);
+        
+                        }else{
+        
+                            $count =  date('H:i:s', $contPorc);
+        
+                        }
+                    }
+
                 ?>
                     <div class="VPS <?php echo $status ?>-vps">
                         <div class="icon">
@@ -153,11 +253,11 @@
                         <div class="date">
                             <div class="date-title">
 
-                            <?php if ( $status == 'Online'): ?>
+                            <?php if ( $status == 'Online' || $status == 'Unavailable'): ?>
                                 <span>Vencimento</span>
                             <?php endif ?>
 
-                            <?php if ( $status != 'Online'): ?>
+                            <?php if ( $status == 'Offline'): ?>
                                 <span>Vencido</span>
                             <?php endif ?>
                                 
@@ -178,17 +278,20 @@
                             <?php if ( $status == 'Online'): ?>
                             <span>Alterar IP</span>
                             <?php endif ?>
-                            <?php if ( $status != 'Online'): ?>
+                            <?php if ( $status == 'Offline'): ?>
                             <span>Renovar</span>
+                            <?php endif ?>
+                            <?php if ( $status == 'Unavailable'): ?>
+                            <span>Alterando IP</span>
                             <?php endif ?>
                         </div>
                         <div class="gerency">
-                            <?php if ($status != 'Offline'): ?>
+                            <?php if ($status == 'Online'): ?>
                             <form action="./Desktop/index.php" method="post">
                                 <button name="log-in" value="<?php echo $ip ?>">ENTRAR</button>
                             </form>
                             <?php endif ?>
-                            <?php if ($status == 'Offline'): ?>
+                            <?php if ($status == 'Offline' || $status == 'Unavailable'): ?>
                             <span>ENTRAR</span>
                             <?php endif ?>
                         </div>
@@ -208,12 +311,14 @@
                             <span>10m</span>
                         </div>
                         <div class="ip-trocarte">
-                            <span>Trocar</span>
+                            <form action="./update_ip.php" method="post">
+                                <button name="trocate" value="<?php echo $ip?>">Trocar</button>
+                            </form>
                         </div>
                     </div>
                     <?php endif; ?>
                         <?php
-                            if($status != 'Online'):
+                            if($status == 'Offline'):
                         ?>
                     <div class="renew IP-gerency">
                         <div class="renew-price">
@@ -230,6 +335,21 @@
                             <form action="./renovate.php" method="post">
                                 <button name="renovate" value="<?php echo $ip?>">Renovar</button>
                             </form>
+                        </div>
+                    </div>
+                    <?php endif; ?>
+                    <?php
+                        if($status == 'Unavailable'):
+                    ?>
+                    <div class="IP-gerency">
+                        <div class="ip-number">
+                            <span>--- --- ---</span>
+                        </div>
+                        <div class="ip-price">
+                            <span>500$</span>
+                        </div>
+                        <div class="ip-time unavailable-time">
+                            <span></span>
                         </div>
                     </div>
                     <?php endif; ?>
@@ -257,7 +377,7 @@
                             </div>
                         </div>
                         <div class="info-bank">
-                            <span>AG: <?php echo $agency;?> C: <?php echo $account?></span>
+                            <span>AG: <span><?php echo $agency;?></span> C: <?php echo $account?></span>
                         </div>
                         <div class="option-bank">
                             <div class="pencil-option">

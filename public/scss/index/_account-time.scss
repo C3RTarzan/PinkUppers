@@ -1,0 +1,129 @@
+body{
+    position: relative;
+    .time-vps-wait{
+        transition: 1s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        z-index: 2;
+        //width: 250px; //click
+        width: 0;
+        max-height: calc(100% - 25px);
+        overflow-y: auto;
+        top: 25px;
+        padding: 5px 0;
+        background-color: rgba(0,0,0,.2);
+        border-radius: 0 5px 5px 0;
+        opacity: .9;
+        .none{
+            display: none;
+        }
+        .wait-iten{
+            width: 90%;
+            height: 50px;
+            border-radius: 5px;
+            background-color: $dark2;
+            padding: 2px 5px;
+            margin: 5px 0;
+            display: flex;
+            box-shadow: 0 0 1px $corspan;
+            //justify-content: center;
+            align-items: center;
+            .iten-inffo-number{
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                width: 20%;
+                height: 100%;
+                div{
+                    width: 100%;
+                    height: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    user-select: none;
+                    span{
+                        font-size: 14px;
+                    }
+                }
+                .number-time{
+                    span{
+                        color: $corspan;
+                    }
+                }
+                .number-percentage{
+                    span{
+                        color: $corspan;
+                        opacity: .8;
+                    }
+                }
+            }
+            .iten-percentage-bar{
+                width: 80%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                .bar-inffo{
+                    height: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    span{
+                        color: $coramarelo;
+                        font-size: 15px;
+                    }
+                }
+                .bar-bc{
+                    height: 50%;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .bar{
+                        height: 10px;
+                        width: 90%;
+                        overflow: hidden;
+                        border-radius: 10px;
+                        background-color: $dark3;
+                        box-shadow: 0 0 1.5px white;
+                        .bar-inside{
+                            //width: 80%;
+                            height: 100%;
+                            border-radius: 10px;
+                            background-image: linear-gradient(to right, red , yellow);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .wait-arrow{  
+        @keyframes anima {
+            to {
+                opacity: 0;
+            }
+        }
+        transition: 1s;
+        user-select: none;
+        position: fixed;
+        z-index: 2;
+        left: 0;
+        top: 25px;
+        //left: 250px; //click
+        left: 0; 
+        width: auto;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        //transform: rotateY(200deg); //click
+        transform: rotateY(0deg);
+        cursor: pointer;
+        animation: anima 1.5s ease infinite;
+        .iconify{
+            color: $coramarelo;
+        }
+    }
+}
